@@ -1,107 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+@font-face {
+  font-family: 'Oswald', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+}
+
+html, body {
+  font-family: 'Oswald', sans-serif !important;
+}
+
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
+  --toastify-color-progress-light: #fff !important
+}
+:root {
+  --body-bg-color: #e5ecef;
+  --theme-bg-color: #fff;
+  --settings-icon-hover: #9fa7ac;
+  --developer-color: #f9fafb;
+  --input-bg: #f8f8fa;
+  --input-chat-color: #a2a2a2;
+  --border-color: #eef2f4;
+  --body-font: "Manrope", sans-serif;
+  --body-color: #273346;
+  --settings-icon-color: #c1c7cd;
+  --msg-message: #969eaa;
+  --chat-text-bg: #f1f2f6;
+  --theme-color: #0086ff;
+  --msg-date: #c0c7d2;
+  --button-bg-color: #f0f7ff;
+  --button-color: var(--theme-color);
+  --detail-font-color: #919ca2;
+  --msg-hover-bg: rgba(238, 242, 244, 0.4);
+  --active-conversation-bg: linear-gradient(
+   to right,
+   rgba(238, 242, 244, 0.4) 0%,
+   rgba(238, 242, 244, 0) 100%
   );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
+  --overlay-bg: linear-gradient(
+   to bottom,
+   rgba(255, 255, 255, 0) 0%,
+   rgba(255, 255, 255, 1) 65%,
+   rgba(255, 255, 255, 1) 100%
   );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
+  --chat-header-bg: linear-gradient(
+   to bottom,
+   rgba(255, 255, 255, 1) 0%,
+   rgba(255, 255, 255, 1) 78%,
+   rgba(255, 255, 255, 0) 100%
   );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+[data-theme=purple] {
+  --theme-color: #9f7aea;
+  --button-color: #9f7aea;
+  --button-bg-color: rgba(159, 122, 234, 0.12);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+[data-theme=green] {
+  --theme-color: #38b2ac;
+  --button-color: #38b2ac;
+  --button-bg-color: rgba(56, 178, 171, 0.15);
+}
+
+[data-theme=orange] {
+  --theme-color: #ed8936;
+  --button-color: #ed8936;
+  --button-bg-color: rgba(237, 137, 54, 0.12);
+}
+
+.dark-mode {
+  --body-bg-color: #1d1d1d;
+  --theme-bg-color: #27292d;
+  --border-color: #323336;
+  --body-color: #d1d1d2;
+  --active-conversation-bg: linear-gradient(
+   to right,
+   rgba(47, 50, 56, 0.54),
+   rgba(238, 242, 244, 0) 100%
+  );
+  --msg-hover-bg: rgba(47, 50, 56, 0.54);
+  --chat-text-bg: #383b40;
+  --chat-text-color: #b5b7ba;
+  --msg-date: #626466;
+  --msg-message: var(--msg-date);
+  --overlay-bg: linear-gradient(
+   to bottom,
+   rgba(0, 0, 0, 0) 0%,
+   #27292d 65%,
+   #27292d 100%
+  );
+  --input-bg: #2f3236;
+  --chat-header-bg: linear-gradient(
+   to bottom,
+   #27292d 0%,
+   #27292d 78%,
+   rgba(255, 255, 255, 0) 100%
+  );
+  --settings-icon-color: #7c7e80;
+  --developer-color: var(--border-color);
+  --button-bg-color: #393b40;
+  --button-color: var(--body-color);
+  --input-chat-color: #6f7073;
+  --detail-font-color: var(--input-chat-color);
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+* {
+  box-sizing: border-box;
+}
+
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  width: 60%;
+  background-color: #fff;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  width: 40%;
+  background-size:     cover;                      
+  background-repeat:   no-repeat;
+  background-position: center center ;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.landingpagebutton {
+  width: 200px;
+  height: 60px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Style the image inside the centered container, if needed */
+/* Style the image inside the centered container, if needed */
+
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
+}
+
+.link-underline:hover {
+  background-size: 100% 2px;
+  background-position: 0 100%
+}
+
+
+
+.skew-menu {
+  text-align: center;
+  margin-top: 9em;
+}
+.skew-menu ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: skew(-25deg);
+}
+.skew-menu ul li {
+  background: #fff;
+  float: left;
+  border-right: 1px solid #eee;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: bolder;
+  transition: all 0.3s linear;
+}
+.skew-menu ul li:first-child {
+  border-radius: 7px 0 0 7px;
+}
+.skew-menu ul li:last-child {
+  border-right: none;
+  border-radius: 0 7px 7px 0;
+}
+.skew-menu ul li:hover {
+  background: #eee;
+  color: #1F40DD;
+}
+.skew-menu ul li a {
+  display: block;
+  padding: 1em 2em;
+  color: inherit;
+  text-decoration: none;
+  transform: skew(25deg);
 }
