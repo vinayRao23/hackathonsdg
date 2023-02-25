@@ -30,7 +30,7 @@ export const Navigation = () => {
             width: 220,
             fontSize: 52,
             marginLeft: "16%",
-            marginTop: -50,
+            marginTop: -30,
           }}
           alt=""
         />

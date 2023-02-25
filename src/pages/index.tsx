@@ -69,12 +69,31 @@ export default function Home() {
               studying for exams or just looking to expand your knowledge, our
               website has everything you need to succeed.
             </p>
-            <Primary
-              onClick={() => {
-                router.push("/summarize");
-              }}
-              title="Get Started"
-            />
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <Primary
+                onClick={() => {
+                  router.push("/summarize");
+                }}
+                title="Notes Summarizer"
+              />
+              <Primary
+                style={{ marginLeft: 20 }}
+                onClick={() => {
+                  router.push("/video");
+                }}
+                btnColor="#27C392"
+                title="Video Finder"
+              />
+
+              <Primary
+                style={{ marginLeft: 20 }}
+                onClick={() => {
+                  router.push("/summarize");
+                }}
+                btnColor="#51A8DB"
+                title="Article Finder"
+              />
+            </div>
             <p
               style={{
                 textAlign: "left",
