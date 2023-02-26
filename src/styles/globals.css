@@ -260,3 +260,269 @@ a {
   background-color: white;
   border-color: #333333;
 }
+
+
+
+.card {
+  background-color: var(--color3);
+  min-width: 300px;
+  max-width: 340px;
+  padding: 20px;
+  border-radius: 15px;
+  border:2px solid #eee;
+  margin-top: 30px;
+  cursor: pointer;
+}
+@media (max-width: 376px) {
+  .card {
+      transform: scale(0.9);
+      min-width: auto;
+  }
+}
+@media (max-width: 321px) {
+  .card {
+      transform: scale(0.75);
+      min-width: auto;
+  }
+}
+
+.card__imgContainer {
+  width: 300px;
+  height: 300px;
+  border-radius: inherit;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__imgContainer:hover {
+  cursor: pointer;
+}
+
+.card__imgOverlay {
+  background-color: var(--color2Trans);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  visibility: hidden;
+  
+  /* Flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card__imgContainer:active .card__imgOverlay .card__imgOverlayViewIcon {
+  transform: scale(0.90);
+}
+
+.card__img {
+  max-width: 100%;
+  border-radius: inherit;
+}
+
+.card__title {
+  display: block;
+  color: var(--color5);
+  width: fit-content;
+  margin: 20px 0 15px;
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card__title:hover {
+  color: var(--color2);
+}
+
+.card__title:active {
+  text-decoration: underline;
+}
+
+.card__desc {
+  color: var(--color1);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.card__info {
+  margin: 20px 0 0;
+
+  /* Flex */
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__ethValue {
+  color: var(--color2);
+
+  /* Flex */
+  display: flex;
+  align-items: center;
+}
+
+.card__ethValueIcon {
+
+}
+
+.card__ethValueText {
+  margin-left: 8px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.card__date {
+  color: var(--color1);
+
+  /* Flex */
+  display: flex;
+  align-items: center;
+}
+
+.card__dateIcon {
+
+}
+
+.card__dateText {
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.card__separator {
+  display: block;
+  background-color: var(--color4);
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  border-radius: inherit;
+}
+
+.card__creator {
+  color: var(--color1);
+  
+  /* Flex */
+  display: flex;
+  align-items: center;
+}
+
+.card__creatorImg {
+  width: 30px;
+  height: 30px;
+  outline: solid 2px var(--color5);
+  border-radius: 50%;
+}
+
+.card__creatorName {
+  margin-left: 12px;
+  font-weight: 300;
+}
+
+.card__creatorLink {
+  color: var(--color5);
+  text-decoration: none;
+}
+
+.card__creatorLink:hover {
+  color: var(--color2);    
+}
+
+.card__creatorLink:active {
+  text-decoration: underline;
+}
+
+
+
+.grids {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 0;
+  grid-row-gap: 20px;
+  margin-top: 50px;
+}
+
+@media only screen and (min-width: 1379px) {
+  .grids {
+    grid-template-columns: 47.5% 47.5%;
+    grid-column-gap: 5%;
+    grid-row-gap: 40px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .grids {
+    grid-template-columns: 30% 30% 30%;
+    grid-row-gap: 50px;
+  }
+}
+
+
+.checkbox-wrapper .tgl {
+  display: none;
+}
+.checkbox-wrapper .tgl + .tgl-btn {
+  background: #333333;
+  border-radius: 2em;
+  padding: 6px;
+  transition: all 0.4s ease;
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox-wrapper .tgl + .tgl-btn::before, .checkbox-wrapper .tgl + .tgl-btn::after {
+  position: relative;
+  display: block;
+  content: "";
+  height: 100%;
+}
+.checkbox-wrapper .tgl + .tgl-btn::before {
+  display: none;
+  width: 50%;
+}
+.checkbox-wrapper .tgl + .tgl-btn::after {
+  left: 0;
+  border-radius: 50%;
+  background: #fff;
+  width: unset;
+  aspect-ratio: 1/1;
+  transition: all 0.2s ease;
+}
+.checkbox-wrapper .tgl:checked + .tgl-btn {
+  background: #f0f0f0;
+}
+.checkbox-wrapper .tgl:checked + .tgl-btn:after {
+  transform: translateX(150%);
+  background: #333333;
+}
+.checkbox-wrapper .icon {
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-invert);
+}
+.checkbox-wrapper .icon_sun {
+  left: 10%;
+}
+.checkbox-wrapper .icon_moon {
+  right: 10%;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}

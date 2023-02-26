@@ -25,12 +25,16 @@ export const Navigation = () => {
     <>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <img
-          src="/edutoolslogo.png"
+          src={
+            localStorage.getItem("theme") === "light"
+              ? "/edutoolslogo.png"
+              : "/edutoolsdark.png"
+          }
           style={{
             width: 220,
             fontSize: 52,
             marginLeft: "16%",
-            marginTop: -30,
+            marginTop: localStorage.getItem("theme") === "light" ? -30 : 20,
           }}
           alt=""
         />
