@@ -21,25 +21,26 @@ import NextLink from "next/link";
 // ];
 
 export const Navigation = () => {
-  return (
-    <>
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <img
-          src={
-            localStorage.getItem("theme") === "light"
-              ? "/edutoolslogo.png"
-              : "/edutoolsdark.png"
-          }
-          style={{
-            width: 220,
-            fontSize: 52,
-            marginLeft: "16%",
-            marginTop: localStorage.getItem("theme") === "light" ? -30 : 20,
-          }}
-          alt=""
-        />
+  if (typeof localStorage !== undefined)
+    return (
+      <>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <img
+            src={
+              localStorage.getItem("theme") === "light"
+                ? "/edutoolslogo.png"
+                : "/edutoolsdark.png"
+            }
+            style={{
+              width: 220,
+              fontSize: 52,
+              marginLeft: "16%",
+              marginTop: localStorage.getItem("theme") === "light" ? -30 : 20,
+            }}
+            alt=""
+          />
 
-        {/* <button
+          {/* <button
           id="heromenu"
           style={{
             backgroundColor: "#fff",
@@ -91,7 +92,7 @@ export const Navigation = () => {
           </svg>
         </button> */}
 
-        {/* <nav
+          {/* <nav
           className="skew-menu"
           style={{
             zoom: 1.2,
@@ -109,7 +110,10 @@ export const Navigation = () => {
             ))}
           </ul>
         </nav> */}
-      </div>
-    </>
-  );
+        </div>
+      </>
+    );
+  else {
+    return <h1>hi</h1>;
+  }
 };

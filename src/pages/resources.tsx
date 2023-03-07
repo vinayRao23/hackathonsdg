@@ -222,7 +222,6 @@ export default function Resource() {
         <div className="grids">
           {videos &&
             videos.map((v: any) => {
-              console.log(v.pagemap.metatags);
               return (
                 <div
                   className="card"
