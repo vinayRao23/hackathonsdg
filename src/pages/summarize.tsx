@@ -191,6 +191,7 @@ export default function Summarizer() {
             {summary ? (
               summary.sentences.map((s: any) => (
                 <li
+                  key={s}
                   style={{
                     maxWidth: 400,
                     color: theme === "dark" ? "#AEAEAF" : "#7F7E7E",

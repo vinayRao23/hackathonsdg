@@ -224,6 +224,7 @@ export default function Resource() {
             videos.map((v: any) => {
               return (
                 <div
+                  key={v.title}
                   className="card"
                   style={{
                     width: 400,

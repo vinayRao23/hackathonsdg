@@ -8,7 +8,7 @@ export const Navigation = () => {
             width: 220,
             fontSize: 52,
             marginLeft: "16%",
-            marginTop: localStorage.getItem("theme") === "light" ? -30 : 20,
+            marginTop: -30,
           }}
           alt=""
         />
